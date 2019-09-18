@@ -26,48 +26,52 @@
 						<toolChain id="com.crt.advproject.toolchain.lib.debug.1674012395" name="Code Red MCU Tools" superClass="com.crt.advproject.toolchain.lib.debug">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.lib.debug.1651229694" name="ARM-based MCU (Debug)" superClass="com.crt.advproject.platform.lib.debug"/>
 							<builder buildPath="${workspace_loc:/CMSISv1p30_LPC17xx/Debug}" id="com.crt.advproject.builder.lib.debug.115305195" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="com.crt.advproject.builder.lib.debug"/>
-							<tool id="com.crt.advproject.cpp.lib.debug.1083870465" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.lib.debug"/>
+							<tool id="com.crt.advproject.cpp.lib.debug.1083870465" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.lib.debug">
+								<option id="com.crt.advproject.cpp.hdrlib.624653358" superClass="com.crt.advproject.cpp.hdrlib"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.410105748" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+							</tool>
 							<tool id="com.crt.advproject.gcc.lib.debug.1253795442" name="MCU C Compiler" superClass="com.crt.advproject.gcc.lib.debug">
-								<option id="com.crt.advproject.gcc.arch.2107066979" name="Architecture" superClass="com.crt.advproject.gcc.arch" value="com.crt.advproject.gcc.target.cm3" valueType="enumerated"/>
-								<option id="com.crt.advproject.gcc.thumb.217877700" name="Thumb mode" superClass="com.crt.advproject.gcc.thumb" value="true" valueType="boolean"/>
-								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1611902187" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+								<option id="com.crt.advproject.gcc.arch.2107066979" name="Architecture" superClass="com.crt.advproject.gcc.arch" useByScannerDiscovery="false" value="com.crt.advproject.gcc.target.cm3" valueType="enumerated"/>
+								<option id="com.crt.advproject.gcc.thumb.217877700" name="Thumb mode" superClass="com.crt.advproject.gcc.thumb" useByScannerDiscovery="false" value="true" valueType="boolean"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.preprocessor.def.symbols.1611902187" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="DEBUG"/>
 									<listOptionValue builtIn="false" value="__CODE_RED"/>
 									<listOptionValue builtIn="false" value="__REDLIB__"/>
 								</option>
-								<option id="gnu.c.compiler.option.misc.other.751566785" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections" valueType="string"/>
-								<option id="gnu.c.compiler.option.preprocessor.nostdinc.2017321520" name="Do not search system directories (-nostdinc)" superClass="gnu.c.compiler.option.preprocessor.nostdinc"/>
-								<option id="gnu.c.compiler.option.preprocessor.preprocess.539338146" name="Preprocess only (-E)" superClass="gnu.c.compiler.option.preprocessor.preprocess"/>
-								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1928549274" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol"/>
-								<option id="gnu.c.compiler.option.include.paths.1595710885" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+								<option id="gnu.c.compiler.option.misc.other.751566785" name="Other flags" superClass="gnu.c.compiler.option.misc.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections" valueType="string"/>
+								<option id="gnu.c.compiler.option.preprocessor.nostdinc.2017321520" name="Do not search system directories (-nostdinc)" superClass="gnu.c.compiler.option.preprocessor.nostdinc" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.preprocessor.preprocess.539338146" name="Preprocess only (-E)" superClass="gnu.c.compiler.option.preprocessor.preprocess" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1928549274" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false"/>
+								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1595710885" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/CMSISv2p00_LPC17xx/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Lib_EaBaseBoard/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Lib_MCU/inc}&quot;"/>
 								</option>
-								<option id="com.crt.advproject.gcc.lib.debug.option.optimization.level.2048433975" name="Optimization Level" superClass="com.crt.advproject.gcc.lib.debug.option.optimization.level"/>
-								<option id="gnu.c.compiler.option.optimization.flags.519271487" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags"/>
-								<option id="com.crt.advproject.gcc.lib.debug.option.debugging.level.703500040" name="Debug Level" superClass="com.crt.advproject.gcc.lib.debug.option.debugging.level"/>
-								<option id="gnu.c.compiler.option.debugging.other.664591822" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other"/>
-								<option id="gnu.c.compiler.option.debugging.gprof.372966733" name="Generate gprof information (-pg)" superClass="gnu.c.compiler.option.debugging.gprof"/>
-								<option id="gnu.c.compiler.option.debugging.prof.141727072" name="Generate prof information (-p)" superClass="gnu.c.compiler.option.debugging.prof"/>
-								<option id="gnu.c.compiler.option.warnings.syntax.758551776" name="Check syntax only (-fsyntax-only)" superClass="gnu.c.compiler.option.warnings.syntax"/>
-								<option id="gnu.c.compiler.option.warnings.pedantic.961173853" name="Pedantic (-pedantic)" superClass="gnu.c.compiler.option.warnings.pedantic"/>
-								<option id="gnu.c.compiler.option.warnings.pedantic.error.795416872" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.c.compiler.option.warnings.pedantic.error"/>
-								<option id="gnu.c.compiler.option.warnings.nowarn.1607220596" name="Inhibit all warnings (-w)" superClass="gnu.c.compiler.option.warnings.nowarn"/>
-								<option id="gnu.c.compiler.option.warnings.allwarn.1055797183" name="All warnings (-Wall)" superClass="gnu.c.compiler.option.warnings.allwarn"/>
-								<option id="gnu.c.compiler.option.warnings.toerrors.227104916" name="Warnings as errors (-Werror)" superClass="gnu.c.compiler.option.warnings.toerrors"/>
-								<option id="gnu.c.compiler.option.misc.verbose.197214409" name="Verbose (-v)" superClass="gnu.c.compiler.option.misc.verbose"/>
-								<option id="gnu.c.compiler.option.misc.ansi.559459826" name="Support ANSI programs (-ansi)" superClass="gnu.c.compiler.option.misc.ansi"/>
-								<option id="com.crt.advproject.gcc.thumbinterwork.1328994504" name="Enable Thumb interworking" superClass="com.crt.advproject.gcc.thumbinterwork"/>
-								<option id="com.crt.advproject.gcc.hdrlib.1153527230" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib"/>
-								<option id="com.crt.advproject.gcc.config.1673845569" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config"/>
-								<option id="com.crt.advproject.gcc.store.489478560" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store"/>
+								<option id="com.crt.advproject.gcc.lib.debug.option.optimization.level.2048433975" name="Optimization Level" superClass="com.crt.advproject.gcc.lib.debug.option.optimization.level" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.optimization.flags.519271487" name="Other optimization flags" superClass="gnu.c.compiler.option.optimization.flags" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.lib.debug.option.debugging.level.703500040" name="Debug Level" superClass="com.crt.advproject.gcc.lib.debug.option.debugging.level" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.other.664591822" name="Other debugging flags" superClass="gnu.c.compiler.option.debugging.other" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.gprof.372966733" name="Generate gprof information (-pg)" superClass="gnu.c.compiler.option.debugging.gprof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.debugging.prof.141727072" name="Generate prof information (-p)" superClass="gnu.c.compiler.option.debugging.prof" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.syntax.758551776" name="Check syntax only (-fsyntax-only)" superClass="gnu.c.compiler.option.warnings.syntax" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.pedantic.961173853" name="Pedantic (-pedantic)" superClass="gnu.c.compiler.option.warnings.pedantic" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.pedantic.error.795416872" name="Pedantic warnings as errors (-pedantic-errors)" superClass="gnu.c.compiler.option.warnings.pedantic.error" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.nowarn.1607220596" name="Inhibit all warnings (-w)" superClass="gnu.c.compiler.option.warnings.nowarn" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.allwarn.1055797183" name="All warnings (-Wall)" superClass="gnu.c.compiler.option.warnings.allwarn" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.warnings.toerrors.227104916" name="Warnings as errors (-Werror)" superClass="gnu.c.compiler.option.warnings.toerrors" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.verbose.197214409" name="Verbose (-v)" superClass="gnu.c.compiler.option.misc.verbose" useByScannerDiscovery="false"/>
+								<option id="gnu.c.compiler.option.misc.ansi.559459826" name="Support ANSI programs (-ansi)" superClass="gnu.c.compiler.option.misc.ansi" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.thumbinterwork.1328994504" name="Enable Thumb interworking" superClass="com.crt.advproject.gcc.thumbinterwork" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.hdrlib.1153527230" name="Library headers" superClass="com.crt.advproject.gcc.hdrlib" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.config.1673845569" name="Obsolete (Config)" superClass="com.crt.advproject.gcc.config" useByScannerDiscovery="false"/>
+								<option id="com.crt.advproject.gcc.store.489478560" name="Obsolete (Store)" superClass="com.crt.advproject.gcc.store" useByScannerDiscovery="false"/>
 								<inputType id="com.crt.advproject.compiler.input.1619818617" superClass="com.crt.advproject.compiler.input"/>
 							</tool>
 							<tool id="com.crt.advproject.gas.lib.debug.1221856873" name="MCU Assembler" superClass="com.crt.advproject.gas.lib.debug">
 								<option id="com.crt.advproject.gas.arch.1504606434" name="Architecture" superClass="com.crt.advproject.gas.arch" value="com.crt.advproject.gas.target.cm3" valueType="enumerated"/>
 								<option id="com.crt.advproject.gas.thumb.1818636948" name="Thumb mode" superClass="com.crt.advproject.gas.thumb" value="true" valueType="boolean"/>
 								<option id="gnu.both.asm.option.flags.crt.2056929508" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ " valueType="string"/>
+								<option id="com.crt.advproject.gas.hdrlib.55807948" superClass="com.crt.advproject.gas.hdrlib"/>
 								<inputType id="com.crt.advproject.assembler.input.1433807015" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.937579496" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
@@ -521,4 +525,5 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="com.crt.advproject"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
