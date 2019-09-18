@@ -1,0 +1,7 @@
+21:58:48 **** Clean-only build of configuration Debug for project Projeto ****
+make -r -j8 clean 
+rm -rf  ./src/Projeto.o ./src/cr_startup_lpc175x_6x.o ./src/crp.o  ./src/Projeto.d ./src/cr_startup_lpc175x_6x.d ./src/crp.d  Projeto.axf
+ 
+
+21:58:49 Build Finished. 0 errors, 0 warnings. (took 478ms)
+
