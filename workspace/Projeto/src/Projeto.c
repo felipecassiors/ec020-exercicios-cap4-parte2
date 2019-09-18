@@ -1,6 +1,6 @@
 /*
 ===============================================================================
- Name        : main.c
+ Name        : Projeto.c
  Author      : $(author)
  Version     :
  Copyright   : $(copyright)
