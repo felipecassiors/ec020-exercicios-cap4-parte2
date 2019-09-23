@@ -1,0 +1,12 @@
+"FreeRTOS Task Aware Debugger for GDB" version 11.0.1 (201907311258)
+(c) 2016-2018 NXP Semiconductors, Inc.
+==================================
+23:41:52.342 INFO: [TadModel] DSF session ID 2 has started.
+23:41:57.810 INFO: [TadState] TAD state changed:  DEBUG_STARTED -> DEBUG_INIT_0 (RESUMED, USER_REQUEST)
+23:41:57.990 INFO: [TadState] TAD state changed:  DEBUG_INIT_0 -> DEBUG_INIT_1 (SUSPENDED, SIGNAL)
+23:41:59.50 INFO: [TadState] TAD state changed:  DEBUG_INIT_1 -> DEBUG_SUSPENDED (RESUMED, USER_REQUEST)
+23:41:59.165 INFO: [TadState] TAD state changed:  DEBUG_SUSPENDED -> DEBUG_SUSPENDED (SUSPENDED, BREAKPOINT)
+23:44:08.384 INFO: [TadState] TAD state changed:  DEBUG_SUSPENDED -> DEBUG_RESUMED (RESUMED, USER_REQUEST)
+23:44:08.395 INFO: [TadState] TAD state changed:  DEBUG_RESUMED -> READY (SUSPENDED, ERROR)
+23:44:17.335 INFO: [TadState] TAD state changed:  READY -> DEBUG_RESUMED (RESUMED, UNKNOWN)
+23:46:19.181 INFO: [TadModel] DSF session ID 2 has ended.
