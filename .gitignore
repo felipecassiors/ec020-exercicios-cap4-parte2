@@ -1,5 +1,6 @@
 .mcuxpressoide_packages_support
 Debug/
+FreeRTOS_TAD_logs
 
 # Created by https://www.gitignore.io/api/c,eclipse
 # Edit at https://www.gitignore.io/?templates=c,eclipse

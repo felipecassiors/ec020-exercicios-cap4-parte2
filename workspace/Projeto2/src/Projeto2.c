@@ -23,9 +23,6 @@
 uint8_t buf[10];
 uint32_t msTicks = 0;
 
-uint32_t luminosityValue = 0;
-int32_t temp = 0;
-
 static void init_ssp(void)
 {
     SSP_CFG_Type SSP_ConfigStruct;
@@ -155,9 +152,6 @@ void intToString(int value, uint8_t *pBuf, uint32_t len, uint32_t base)
 
 void tocarBuzzer()
 {
-
-    int i = 0;
-
     GPIO_SetDir(2, 1 << 0, 1);
     GPIO_SetDir(2, 1 << 1, 1);
 
@@ -198,12 +192,10 @@ void displayCount()
 
 void startDisplayOled()
 {
-
-    oled_init();
-
-    oled_putString(1, 1, (uint8_t *)"Temp   : ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
-    oled_putString(1, 9, (uint8_t *)"Light  : ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
-    oled_putString(1, 17, (uint8_t *)"Umidade: ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
+    oled_clearScreen(OLED_COLOR_WHITE);
+    oled_putString(1, 1, (uint8_t *)  "Temp: ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
+    oled_putString(1, 9, (uint8_t *)  "Lum : ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
+    oled_putString(1, 17, (uint8_t *) "Hum : ", OLED_COLOR_BLACK, OLED_COLOR_WHITE);
 }
 
 uint32_t getHumidity()
@@ -211,8 +203,7 @@ uint32_t getHumidity()
     uint32_t humidity = 0;
     ADC_StartCmd(LPC_ADC, ADC_START_NOW);
     //Wait conversion complete
-    while (!(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_0, ADC_DATA_DONE)))
-        ;
+    while (!(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_0, ADC_DATA_DONE)));
     humidity = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0);
     return humidity;
 }
@@ -233,34 +224,20 @@ void writeOnDisplay(uint32_t temperature, uint32_t luminosity, uint32_t humidity
     oled_putString((1 + 9 * 6), 17, buf, OLED_COLOR_BLACK, OLED_COLOR_WHITE);
 }
 
-void getTrimpot()
+unsigned int getTrimpot()
 {
 
     unsigned int trim = 0;
     rgb_init();
     ADC_StartCmd(LPC_ADC, ADC_START_NOW);
-    while (!(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_0, ADC_DATA_DONE)))
-        ;
+    while (!(ADC_ChannelGetStatus(LPC_ADC, ADC_CHANNEL_0, ADC_DATA_DONE)))        ;
     trim = ADC_ChannelGetData(LPC_ADC, ADC_CHANNEL_0);
 
-    if (trim < 2700)
-    {
-        rgb_setLeds(RGB_RED);
-    }
-    else if (trim > 2960)
-    {
-        rgb_setLeds(RGB_BLUE);
-        GPIO_SetValue(2, (1 << 1));
-    }
-    else
-    {
-        rgb_setLeds(RGB_GREEN);
-    }
+    return trim;
 }
 
 int main(void)
 {
-
     //Initializing
     init_i2c();
     init_ssp();
@@ -276,13 +253,29 @@ int main(void)
 
     while (1)
     {
-        getTrimpot();
-        temp = temp_read();
-        luminosityValue = light_read();
+        int32_t temperature = (uint32_t) temp_read() / 10;
+        uint32_t luminosity = light_read();
         uint32_t humidity = getHumidity();
-        writeOnDisplay(luminosityValue, (uint32_t)temp / 10, humidity);
-        if (luminosityValue < 15)
-            displayCount();
+        writeOnDisplay(luminosity, temperature, humidity);
+        if (luminosity < 15) {
+        	displayCount();
+        }
+
+        unsigned int trim = getTrimpot();
+
+        if (trim < 2700)
+        {
+            rgb_setLeds(RGB_RED);
+        }
+        else if (trim > 2960)
+        {
+            rgb_setLeds(RGB_BLUE);
+        }
+        else
+        {
+            rgb_setLeds(RGB_GREEN);
+        }
+
     }
     return 0;
 }
